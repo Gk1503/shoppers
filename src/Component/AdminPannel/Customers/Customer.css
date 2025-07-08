@@ -1,0 +1,22 @@
+#tr th{
+    font-size: 14px;
+}
+#td td{
+    font-size: 14px;
+}
+#EditBtn{
+    background-color: green;
+    margin-left: 5px;
+}
+#DustBin{
+    background-color: brown;
+}
+.deletemodal{
+    height: 180px;
+    color: black;
+    background-color: Pink;
+}
+#p{
+    font-size: 20px;
+    text-align: center;
+}

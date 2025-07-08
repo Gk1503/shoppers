@@ -1,0 +1,206 @@
+#login{
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+#offcanvasRight{
+    width: 550px;
+    border-radius: 20px;
+}
+#offcanvasRightLabel{
+    text-align:center;
+    margin-top: 10px;
+}
+#email{
+  margin-left: 100px;
+  width: 300px;
+  height: 40px;
+  text-align: center;
+}
+#inputemail{
+    width: 400px;
+    height: 40px;
+    font-size: 18px;
+    border: 1px solid gray;
+    border-color:gray ;
+    margin-top: 18px;
+    margin-left: 70px;
+}
+#inputpass{
+    width: 400px;
+    height: 40px;
+    font-size: 18px;
+    border: 1px solid gray;
+    border-color:gray ;
+    margin-top: 10px;
+    margin-left: 70px;
+}
+#signdes{
+    margin-left: 70px;
+}
+#proceed{
+    height: 40px;
+    width: 350px;
+    margin-top: 40px;
+    background-color:lightgray;
+    border: none;
+    margin-left: 80px;
+}
+#proceed:hover{
+    background-color: black;
+    color: white;
+}
+#log1{
+    border: 1px solid black;
+    width: 120px;
+}
+#log2{
+    border: 1px solid black;
+    width: 120px;
+}
+#log{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    margin-left: 50px;
+    margin-top: 50px;
+    opacity: 80%;
+}
+#google{
+    height: 40px;
+    width: 40px;
+    margin-left: 240px;
+    margin-top: 40px;
+}
+#donthave span{
+    color: blue;
+    font-weight: 700;
+    cursor: pointer;
+}
+#donthave span:hover{
+    text-decoration:underline ;
+    text-decoration-color: blue ;
+}
+#donthave{
+    margin-left: 130px;
+}
+#help{
+    margin-top: 100px;
+    font-size: 20px;
+    color: blue;
+    margin-left: 240px;
+    cursor: pointer;
+
+}
+
+.signup-modal {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    z-index: 10; /* Ensures it appears above the login form */
+}
+  .signup-modal .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+  
+  .signup-modal .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* Reusing input and button styles */
+  .signup-modal #inputemail,
+  .signup-modal #inputpass {
+    margin: 10px 0;
+  }
+  
+  .signup-modal #proceed {
+    margin: 20px 0;
+  }
+  #name{
+    width: 300px;
+    text-align: center;
+    margin-left: 100px;
+    height: 40px;
+  }
+  #Password{
+    width: 300px;
+    text-align: center;
+    margin-left: 100px;
+    height: 40px;
+    margin-top: 20px;
+  }
+  #signame{
+    width: 300px;
+    text-align: center;
+    margin-left: 20px;
+    height: 40px;
+    margin-top: 10px;
+  }
+  #sigemail{
+    width: 300px;
+    text-align: center;
+    margin-left: 20px;
+    height: 40px;
+    margin-top: 10px;
+  }
+  #sigmbunber{
+    width: 300px;
+    text-align: center;
+    margin-left: 20px;
+    height: 40px;
+    margin-top: 10px;
+  }
+  #sigcreatepass{
+    width: 300px;
+    text-align: center;
+    margin-left: 20px;
+    height: 40px;
+    margin-top: 10px;
+  }
+
+  #sigconpass{
+    width: 300px;
+    text-align: center;
+    margin-left:20px;
+    height: 40px;
+    margin-top: 10px;
+  }
+  #alreadylogin{
+    margin-left: 10px;
+  }
+  #alreadylogin span{
+    color: blue;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  #alreadylogin  span:hover{
+    text-decoration:underline ;
+    text-decoration-color: blue ;
+}
+#googleSignup{
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}

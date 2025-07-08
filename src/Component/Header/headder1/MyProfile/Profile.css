@@ -1,0 +1,48 @@
+.Profilebtn{
+    
+    cursor: pointer;
+    background-color: #f1f1f1;
+    color: black;
+    border: none;
+    width: 100px;
+    margin-left: -10px;
+  }
+  
+  .Profilebtn:hover{
+   background-color: white;
+   color: #000;
+  }
+  .cl{
+    border: 1px solid black;
+    height: 40px;
+    width: 100px;
+    margin-left: 30px;
+  }
+  /* #Email{
+
+  }
+  #usname{
+    margin-left: 180px;
+  } */
+   .inputfield{
+    margin-left: 100px;
+    width: 250px;
+    text-align: center;
+    height: 40px;
+   }
+   #sc{
+    margin-left: 200px;
+    height: 40px;
+   }
+   #sc:hover{
+    background-color: #000;
+    color: whitesmoke;
+   }
+.cl:hover{
+  background-color: #000;
+    color: whitesmoke;
+}
+#errormessage{
+  margin-left: 120px;
+  color: red;
+}

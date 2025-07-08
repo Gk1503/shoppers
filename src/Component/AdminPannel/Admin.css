@@ -1,0 +1,6 @@
+#mainAdmin{
+    display:flex;
+    flex-direction: row;
+    background-color: rgb(24, 23, 23);
+    
+}

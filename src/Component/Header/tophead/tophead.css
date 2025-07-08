@@ -1,0 +1,30 @@
+#tophead{
+    height: 35px;
+    display: flex;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 12px;
+    /* width: 1000px; */
+}
+#tophead div{
+
+    margin-top: 8px;
+    /* margin-left: 800px; */
+    text-align: center;
+    cursor: pointer;
+}
+#tophead div:hover{
+    text-decoration: underline;
+}
+#fcc{
+    margin-left: 1100px;
+    font-weight: 500;
+}
+#hs{
+    margin-left: 10px;
+    font-weight: 500;
+}
+#ad{
+    margin-left: 10px;
+    font-weight: 500;
+}

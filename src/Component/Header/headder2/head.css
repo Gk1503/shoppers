@@ -1,0 +1,28 @@
+#head2{
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+    font-weight: 400;
+}
+#head2 div:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    text-decoration-color:goldenrod ;
+}
+#luxe{
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: -7px;
+    color:#C48C03;
+    font-family: Cormorant;
+}
+#bara{
+    color: #DC2626;
+    font-size: 16px;
+    font-weight: 700;
+}
+#stylehub{
+    font-size: 17px; 
+    font-weight: 700;
+}
+

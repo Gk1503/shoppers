@@ -1,0 +1,98 @@
+
+.carousel-container1 {
+  text-align: center;
+  background-color: #1c1c1c;
+  color: #fff;
+  padding: 20px;
+}
+
+.carousel-wrapper1 {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.carousel1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  perspective: 1000px; /* Adds depth for pyramid effect */
+}
+
+.carousel-item1 {
+  position: absolute;
+  width: 250px;
+  height: auto;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  transform: scale(0.8) translateY(20%);
+  z-index: 0;
+}
+
+.carousel-item1 img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-item1.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  z-index: 3;
+}
+
+.carousel-item1.next {
+  opacity: 0.7;
+  transform: scale(0.8) translate(180px, 20%);
+  z-index: 2;
+}
+
+.carousel-item1.prev {
+  opacity: 0.7;
+  transform: scale(0.8) translate(-180px, 20%);
+  z-index: 2;
+}
+
+.carousel-item1.hidden {
+  opacity: 0;
+  transform: scale(0.6);
+  z-index: 1;
+}
+
+.carousel-caption1 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.carousel-button1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-button1.left {
+  left: -40px;
+}
+
+.carousel-button1.right {
+  right: -40px;
+}
+
+.carousel-button1:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+

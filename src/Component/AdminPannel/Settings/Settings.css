@@ -1,0 +1,123 @@
+#ChangePasswordButton {
+  margin-top: 20px;
+  width: 200px;
+  padding: 10px 20px;
+  margin-left: 180px;
+  background-color: #4a90e2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#ChangePasswordButton:hover {
+  background-color: #357bd8;
+}
+
+/* Settings Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Settings Modal Box */
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-content h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Input Styling */
+.modal-content input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.modal-content input:focus {
+  border-color: #4a90e2;
+}
+
+/* Error & Success messages */
+.error {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.success {
+  color: #28a745;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* Update Button */
+.modal-content button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #218838;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #333;
+}

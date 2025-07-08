@@ -1,0 +1,206 @@
+#maindasboard{
+    display: flex;
+    flex-direction: column ;
+}
+#row1{
+    display: flex;
+    flex-direction: row;
+    height: 160px;
+    justify-content: center;
+    gap:7%;
+
+}
+#row2{
+    display:flex;
+    flex-direction: row;
+    height:300px;
+    gap: 10px;   
+}
+#row3{
+     display:flex;
+    flex-direction: row;
+    gap: 10px;
+    
+}
+
+#TotalOrder{
+    height: 150px;
+    width: 250px;
+    border-radius: 5% ;
+    border-width: 2px 2px 2px 10px;
+    border-color: rgb(0, 128, 0);
+    border-style: solid;
+  background-color: #F8F9FC; 
+  font-weight: 500;
+}
+#TotalCustomer{
+     height: 150px;
+    width: 250px;
+    border-radius: 5% ;
+    border-width: 2px 2px 2px 10px;
+    border-color: rgb(229, 36, 171);
+    border-style: solid;
+    background-color: #F8F9FC; 
+}
+#TotalEarning{
+     height: 150px;
+    width: 250px;
+    border-radius: 5%;
+    border-width: 2px 2px 2px 10px;
+    border-color: rgb(239, 130, 5);
+    border-style: solid;
+   background-color: #F8F9FC; 
+}
+#FinalBalance{
+    height: 150px;
+    width: 250px;
+    border-radius: 2%;
+     border-width: 2px 2px 2px 10px;
+    border-color: rgb(47, 0, 158);
+    border-style: solid;
+    background-color: #F8F9FC; 
+}
+
+#orderlist{
+ 
+    width:630px;
+    border-radius: 3%;
+    margin-top: 15px;
+  background-color: #F8F9FC;  
+     border: 1px solid rgb(171, 171, 171);
+}
+#productlist{
+    /* height: 190px; */
+    width:628px;
+    margin-top: 20px;
+    background-color: #F8F9FC; 
+    border: 1px solid rgb(171, 171, 171);
+     border-radius: 3%;
+}
+#Graph1{
+    height: 310px;
+    width: 900px;
+    border-radius: 3%;
+    margin-left: 10px;
+}
+#Graph2{
+    height: 308px;
+    width: 350px;
+    margin-left:10px;
+    border-radius: 3%;
+}
+#to{
+    margin-left: 48px;
+    color: green ;
+    font-weight: 500;
+    font-size: 14px;
+}
+#Ton{
+    color: black;
+    font-weight: 700;
+    margin-top: 26px;
+    font-size: 26px;
+    margin-left: 8px;
+}
+#tc {
+    margin-left: 36px;
+    color: red;
+    font-weight: 500;
+    font-size: 14px;
+}
+#te{
+    margin-left: 20px;
+    color: green;
+    font-weight: 500;
+    font-size: 14px;
+}
+#fb {
+    margin-left: 48px;
+    color: red;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+#Tcn, #Ten, #Fbn {
+    color: black;
+    font-weight: 700;
+    margin-top: 26px;
+    font-size: 26px;
+    margin-left: 8px;
+}
+.des{
+    font-size: 12px;
+    /* font-weight: 200; */
+    margin-top: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.symbol{
+    margin-left: 115px;
+    font-size:18px;
+}
+#TotalOrder .symbol{
+    color:green;
+}
+#TotalCustomer .symbol{
+    color:rgb(229, 36, 171);
+
+}
+#TotalEarning .symbol{
+    color:rgb(239, 130, 5);
+}
+#FinalBalance .symbol{
+    color: rgb(47, 0, 158);
+}
+.status {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+}
+.status.complete {
+  background-color: #28a745;
+}
+.status.pending {
+  background-color: #ffc107;
+  color: black;
+}
+.status.cancelled {
+  background-color: #dc3545;
+}
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.styled-table th,
+.styled-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 10px;
+}
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 10px;
+}
+.list-header h3{
+  font-size:15px;
+}
+.tabs span {
+  margin-right: 10px;
+  cursor: pointer;
+  color: gray;
+}
+.tabs .active {
+  font-weight: bold;
+  color: blue;
+}
+.action-icons {
+  font-size: 10px;
+  cursor: pointer;
+}

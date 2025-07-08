@@ -1,0 +1,115 @@
+/* .box{
+    height: 100px;
+    width: 200px; 
+    border: 1px solid black;
+} */
+
+.box {
+    position: absolute; /* Ensures it stays above the page */
+    top: 100px; /* Adjust as needed */
+    left: 87%;
+    transform: translateX(-50%);
+    width: 350px;
+    height: 500px;
+     /* Adjust height dynamically */
+    background: white;
+    color: black; /* Better contrast */
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 9999; /* Ensures it appears above other elements */
+    overflow-y: auto;
+}
+.cart-item { 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1010; /* Ensures items appear above box */
+  }
+  /* .cart2{
+    border: 1px solid black;
+    height: 80px;
+    width: 200px;
+    display: flex;
+  } */
+  .cart-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+  h2{
+   
+   margin-left: 30px;
+    
+  }
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .quantity-controls button {
+    width: 30px;
+    height: 30px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .add-item-btn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .quantity-controls{
+   margin-left: 40px;
+  }
+  .cart-item2{
+    display: flex;
+  }
+  .tp span{
+    border: 1px solid black;
+    width: 500px;
+  }
+  .tp{
+    margin-top: 20px;
+  }
+  .remove-btn{
+    cursor: pointer;
+  }
+  .cart-footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+  }
+  
+  .proceed-btn {
+    background-color: #ff6600;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .proceed-btn:hover {
+    background-color: #e65c00;
+  }
+  

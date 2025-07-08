@@ -1,0 +1,53 @@
+#OurUnique{
+    color: gray ;
+    text-align: center;
+    margin-top: 1%;
+}
+
+#OurUnique span{
+
+    color: black;
+}
+#footeritems{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+}
+#footeritems div{
+
+    /* border: 1px solid black; */
+    height: 140px;
+    width: 250px;
+    align-items: center;
+}
+.tape{
+    font-size: 40px;
+    color: gray;
+    margin-top: 45px;
+    margin-left: 25px;  
+}
+#lastfooter{
+    border: 1px solid black;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12%;
+}
+.lastfooter{
+    border: 1px solid black;
+    height: 190px;
+    width: 220px;
+}
+.footerdes{
+    background-color:#232f3e;
+    height: 400px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 12%;
+}
+.footerdes div{
+    margin-top: 80px;
+}
