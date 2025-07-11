@@ -24,17 +24,23 @@ exports.loginAdmin = async (req, res) => {
   const { AdminEmail, AdminPassword } = req.body;
 
   try {
-    const admin = await AdminDetails.findOne({ AdminEmail, AdminPassword });
+    const admin = await AdminDetails.findOne({ AdminEmail });
 
     if (!admin) {
-      return res.status(401).json({ message: "Invalid credentials" });
+      return res.status(401).json({ message: "Invalid email" });
     }
 
-    res.status(200).json(admin); // or token if using JWT
+    if (admin.AdminPassword !== AdminPassword) {
+      return res.status(401).json({ message: "Invalid password" });
+    }
+
+    res.status(200).json(admin); // You can return a token here if needed
   } catch (err) {
+    console.error("Login error:", err);
     res.status(500).json({ error: err.message });
   }
 };
+
 
 exports.updatePassword = async (req, res) => {
   const { AdminEmail, oldPassword, newPassword } = req.body;

@@ -1,13 +1,25 @@
 const Product = require('../models/productsModel') ;
 
 exports.createProduct = async (req,res) => {
-    
-    try{
-        const product = await Product.create(req.body);
-        res.status(201).json(product);
-    } catch(err) {
-        res.status(400).json({error:err.message});
-    }
+try {
+    const { productCategory, productTitle, productDescription, productOrginalAmount, productAmount, productOffer } = req.body;
+
+    const imageUrl = `http://localhost:${process.env.PORT}/uploads/${req.file.filename}`;
+
+    const product = await Product.create({
+      productImage: imageUrl,
+      productCategory,
+      productTitle,
+      productDescription,
+      productOrginalAmount,
+      productAmount,
+      productOffer,
+    });
+
+    res.status(201).json(product);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
 };
 
 exports.getProducts = async(req,res) => {
@@ -29,17 +41,43 @@ exports.getproducts = async(req,res) =>{
     }
 };
 
-exports.updateProduct = async(req,res) =>{
-    try{
-        const product = await Product.findByIdAndUpdate(req.params.id,req.body, {
-            new:true,
-            runValidators : true
-        });
-         if (!product) return res.status(404).json({ error: 'Product not found' });
-        res.json(product);
-    } catch(err) {
-        res.status(400).json({ error: err.message });
+exports.updateProduct = async (req, res) => {
+  try {
+    const {
+      productCategory,
+      productTitle,
+      productDescription,
+      productOrginalAmount,
+      productAmount,
+      productOffer
+    } = req.body;
+
+    // Build the update object dynamically
+    const updateData = {
+      productCategory,
+      productTitle,
+      productDescription,
+      productOrginalAmount,
+      productAmount,
+      productOffer
+    };
+
+    // If a new file is uploaded, update the image URL
+    if (req.file) {
+      updateData.productImage = `http://localhost:${process.env.PORT}/uploads/${req.file.filename}`;
     }
+
+    const product = await Product.findByIdAndUpdate(req.params.id, updateData, {
+      new: true,
+      runValidators: true
+    });
+
+    if (!product) return res.status(404).json({ error: 'Product not found' });
+
+    res.json(product);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
 };
 
 

@@ -8,38 +8,46 @@ import Settings from "../AdminPannel/Settings/Settings";
 import ATP from "./AddToProducts/ATP";
 import Category from "./Category/Category";
 import TopBar from "../AdminPannel/TopBar/TopBar";
+import { useNavigate } from "react-router-dom";
 
 function Admin() {
   const [activePage, setActivePage] = useState("dashboard");
+  const [admin, setAdmin] = useState(null);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setAdmin(null);
+    navigate("/"); // navigate to home on logout
+  };
 
   const renderPage = () => {
-    if (activePage === "dashboard") {
-      return <Dashboard />;
-    } else if (activePage === "orders") {
-      return <Orders />;
-    } else if (activePage === "customers") {
-      return <Customers />;
-    } else if (activePage === "settings") {
-      return <Settings />;
-    } 
-    else if (activePage === "AddProduct"){
-      return <ATP/>
-    }
-    else if (activePage === "Category"){
-      return <Category/>
-    }
-    else {
-      return <Dashboard />; // fallback
-    }
+    if (activePage === "dashboard") return <Dashboard />;
+    if (activePage === "orders") return <Orders />;
+    if (activePage === "customers") return <Customers />;
+    if (activePage === "settings") return <Settings />;
+    if (activePage === "AddProduct") return <ATP />;
+    if (activePage === "Category") return <Category />;
+    return <Dashboard />;
   };
 
   return (
-    <div id="mainAdmin" style={{ display: "flex" }}>
-      <SideBar setActivePage={setActivePage} activePage={activePage} />
-      <div style={{ flex: 1 }}>
-        <TopBar id="Topbar" />
-        {renderPage()}
-      </div>
+    <div id="mainAdmin" style={{ display: "flex", flexDirection: "column" }}>
+      {/* Pass admin + logout handler */}
+      {!admin ? (
+        <TopBar setAdmin={setAdmin} />
+      ) : (
+        <>
+          <div style={{ display: "flex" }}>
+            <SideBar
+              setActivePage={setActivePage}
+              activePage={activePage}
+              admin={admin}
+              handleLogout={handleLogout}
+            />
+            <div style={{ flex: 1 }}>{renderPage()}</div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

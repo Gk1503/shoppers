@@ -1,11 +1,10 @@
 import "../SideBar/SideBar.css";
 
-function SideBar({ setActivePage, activePage }) {
+function SideBar({ setActivePage, activePage, admin, handleLogout }) {
   return (
     <div id="Sidebar">
-      {/* Replace image logo with text */}
-      <div className="sidebar-logo-text">
-        <h1>GK Shopping</h1>
+      <div>
+        <h3>Admin - Shop</h3>
       </div>
 
       <div
@@ -23,11 +22,14 @@ function SideBar({ setActivePage, activePage }) {
       </div>
 
       <div
-        className={`sidebar-item ${activePage === "AddProduct" ? "active" : ""}`}
+        className={`sidebar-item ${
+          activePage === "AddProduct" ? "active" : ""
+        }`}
         onClick={() => setActivePage("AddProduct")}
       >
         Product
       </div>
+
       <div
         className={`sidebar-item ${activePage === "Category" ? "active" : ""}`}
         onClick={() => setActivePage("Category")}
@@ -48,8 +50,12 @@ function SideBar({ setActivePage, activePage }) {
       >
         Settings
       </div>
-      
 
+      {admin && (
+        <div className="sidebar-item logout" onClick={handleLogout}>
+          Logout
+        </div>
+      )}
     </div>
   );
 }

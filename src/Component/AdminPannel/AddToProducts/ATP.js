@@ -7,7 +7,6 @@ function ATP() {
   const [products, setProducts] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
-    productImage: "",
     productCategory: "",
     productTitle: "",
     productDescription: "",
@@ -15,6 +14,8 @@ function ATP() {
     productAmount: "",
     productOffer: ""
   });
+  const [file, setFile] = useState(null);
+  const [previewUrl, setPreviewUrl] = useState(null);
   const [editProductId, setEditProductId] = useState(null);
 
   const fetchProducts = () => {
@@ -36,7 +37,6 @@ function ATP() {
   const handleCloseModal = () => {
     setShowModal(false);
     setFormData({
-      productImage: "",
       productCategory: "",
       productTitle: "",
       productDescription: "",
@@ -44,6 +44,8 @@ function ATP() {
       productAmount: "",
       productOffer: ""
     });
+    setFile(null);
+    setPreviewUrl(null);
     setEditProductId(null);
   };
 
@@ -51,15 +53,33 @@ function ATP() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
+    if (selectedFile) {
+      setPreviewUrl(URL.createObjectURL(selectedFile));
+    }
+  };
+
   const handleSubmit = () => {
+    const data = new FormData();
+    for (const key in formData) {
+      data.append(key, formData[key]);
+    }
+    if (file) {
+      data.append("productImage", file);
+    }
+
+    const config = { headers: { "Content-Type": "multipart/form-data" } };
+
     if (editProductId) {
-      apiConfig.put(`/api/products/${editProductId}`, formData)
+      apiConfig.put(`/api/products/${editProductId}`, data, config)
         .then(() => {
           fetchProducts();
           handleCloseModal();
         }).catch((err) => console.error("Error Updating Product:", err));
     } else {
-      apiConfig.post('/api/products', formData)
+      apiConfig.post('/api/products', data, config)
         .then(() => {
           fetchProducts();
           handleCloseModal();
@@ -68,8 +88,16 @@ function ATP() {
   };
 
   const handleEdit = (product) => {
-    setFormData(product);
+    setFormData({
+      productCategory: product.productCategory,
+      productTitle: product.productTitle,
+      productDescription: product.productDescription,
+      productOrginalAmount: product.productOrginalAmount,
+      productAmount: product.productAmount,
+      productOffer: product.productOffer
+    });
     setEditProductId(product._id);
+    setPreviewUrl(product.productImage); // Show existing image
     setShowModal(true);
   };
 
@@ -88,10 +116,13 @@ function ATP() {
           <div className="modal-content3" onClick={(e) => e.stopPropagation()}>
             <span className="close-button" onClick={handleCloseModal}>&times;</span>
             <h4>{editProductId ? "Edit Product" : "Add Product"}</h4>
-            <input type="text" name="productImage" placeholder="Image URL" value={formData.productImage} onChange={handleInputChange} />
+            <input type="file" onChange={handleFileChange} required={!editProductId} />
+            {previewUrl && (
+              <img src={previewUrl} alt="Preview" style={{ width: "100px", marginTop: "10px" }} />
+            )}
             <input type="text" name="productCategory" placeholder="Category" value={formData.productCategory} onChange={handleInputChange} />
             <input type="text" name="productTitle" placeholder="Title" value={formData.productTitle} onChange={handleInputChange} />
-            <input name="productDescription" placeholder="Description" value={formData.productDescription} onChange={handleInputChange}></input>
+            <textarea name="productDescription" placeholder="Description" value={formData.productDescription} onChange={handleInputChange}></textarea>
             <input type="text" name="productOrginalAmount" placeholder="Original Amount" value={formData.productOrginalAmount} onChange={handleInputChange} />
             <input type="text" name="productAmount" placeholder="Discounted Amount" value={formData.productAmount} onChange={handleInputChange} />
             <input type="text" name="productOffer" placeholder="Offer %" value={formData.productOffer} onChange={handleInputChange} />
@@ -117,6 +148,7 @@ function ATP() {
               <th>Original Amount</th>
               <th>Amount</th>
               <th>Offer</th>
+              <th>Image</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -131,6 +163,9 @@ function ATP() {
                   <td>{product.productOrginalAmount}</td>
                   <td>{product.productAmount}</td>
                   <td>{product.productOffer}</td>
+                  <td>
+                    <img src={product.productImage} alt="product" width="50" />
+                  </td>
                   <td className="action-icons">
                     <button id="EditBtn" onClick={() => handleEdit(product)}>📝</button>
                     <button onClick={() => handleDelete(product._id)}>🗑️</button>
